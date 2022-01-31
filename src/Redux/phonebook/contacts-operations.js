@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+// поменять адрес бекенда
 axios.defaults.baseURL = 'https://61f08b4e732d93001778eab3.mockapi.io';
 
 export const fetchContacts = createAsyncThunk(
