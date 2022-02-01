@@ -1,8 +1,8 @@
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import MainNav from '../MainNav/MainNav';
 import UserMenu from '../UserMenu/UserMenu';
 import AuthNav from '../AuthNav/AuthNav';
-// import { authSelectors } from '../redux/auth';
+import authSelectors from '../../Redux/auth/auth-selectors';
 
 // перенести стили в модуль.css!
 
@@ -16,13 +16,12 @@ const styles = {
 };
 
 export default function AppBar() {
-  //   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <header style={styles.header}>
       <MainNav />
-      <AuthNav />
-      <UserMenu />
-      {/* {isLoggedIn ? <UserMenu /> : <AuthNav />} */}
+
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>
   );
 }
