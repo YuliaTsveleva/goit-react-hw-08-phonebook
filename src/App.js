@@ -20,14 +20,14 @@ export default function App() {
     <Container>
       <AppBar />
       <Switch>
+        <Route exact path="/">
+          <HomeView />
+        </Route>
         <Route path="/register">
           <RegisterView />
         </Route>
         <Route path="/login">
           <LoginView />
-        </Route>
-        <Route exact path="/">
-          <HomeView />
         </Route>
         <Route path="/contacts">
           <ContactsView />
