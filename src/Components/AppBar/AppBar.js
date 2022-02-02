@@ -17,11 +17,12 @@ const styles = {
 
 export default function AppBar() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const isFetching = useSelector(authSelectors.getIsFetchingCurrentUser);
   return (
     <header style={styles.header}>
       <MainNav />
 
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      {isLoggedIn || isFetching ? <UserMenu /> : <AuthNav />}
     </header>
   );
 }
