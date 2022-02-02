@@ -1,5 +1,5 @@
-import Welcome from '../Components/Welcome';
+import Title from '../Components/Title';
 
 export default function HomeView() {
-  return <Welcome />;
+  return <Title text="Welcome to your private phonebook!" />;
 }
