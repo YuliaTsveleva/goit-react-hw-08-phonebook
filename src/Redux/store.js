@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import contactsReducer from './phonebook/contacts-reducer';
-import authReducer from './auth/auth-slice.js';
+import { authReducer } from './auth';
 import logger from 'redux-logger';
 import {
   persistStore,
@@ -37,7 +37,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }) /*.concat(logger)*/,
+    }).concat(logger),
   devTools: process.env.NODE_ENV === 'development',
 });
 

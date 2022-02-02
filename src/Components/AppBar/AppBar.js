@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import MainNav from '../MainNav/MainNav';
 import UserMenu from '../UserMenu/UserMenu';
 import AuthNav from '../AuthNav/AuthNav';
-import authSelectors from '../../Redux/auth/auth-selectors';
+import { authSelectors } from 'Redux/auth';
 
 // перенести стили в модуль.css!
 

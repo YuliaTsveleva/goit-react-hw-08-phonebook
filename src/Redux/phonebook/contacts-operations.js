@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // поменять адрес бекенда
 // axios.defaults.baseURL = 'https://61f08b4e732d93001778eab3.mockapi.io';
-axios.defaults.baseURL = 'connections-api.herokuapp.com';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',

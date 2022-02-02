@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import authOperations from '../Redux/auth/auth-operations';
+import { authOperations } from '../Redux/auth';
 
 // перенести стили
 const styles = {
