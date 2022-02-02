@@ -22,11 +22,12 @@ export default function UserMenu() {
   //   const avatar = defaultAvatar;
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
+  const isFetching = useSelector(authSelectors.getIsFetchingCurrentUser);
 
   return (
     <div style={styles.container}>
       {/* <img src={avatar} alt="" width="32" style={styles.avatar} /> */}
-      <span style={styles.name}>Welcome, {name}</span>
+      <span style={styles.name}>Welcome, {isFetching ? 'Guest' : name}</span>
       <button type="button" onClick={() => dispatch(authOperations.logOut())}>
         Log out
       </button>

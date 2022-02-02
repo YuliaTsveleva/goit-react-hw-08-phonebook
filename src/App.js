@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Switch } from 'react-router-dom';
 import AppBar from './Components/AppBar/AppBar';
@@ -22,20 +22,24 @@ export default function App() {
   return (
     <Container>
       <AppBar />
-      {!isFetching && (
+      {isFetching ? (
+        <h1>Loading...</h1>
+      ) : (
         <Switch>
-          <PublicRoute exact path="/">
-            <HomeView />
-          </PublicRoute>
-          <PublicRoute path="/register" redirectTo="/contacts" restricted>
-            <RegisterView />
-          </PublicRoute>
-          <PublicRoute path="/login" redirectTo="/contacts" restricted>
-            <LoginView />
-          </PublicRoute>
-          <PrivateRoute path="/contacts" redirectTo="/login">
-            <ContactsView />
-          </PrivateRoute>
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <PublicRoute exact path="/">
+              <HomeView />
+            </PublicRoute>
+            <PublicRoute path="/register" redirectTo="/contacts" restricted>
+              <RegisterView />
+            </PublicRoute>
+            <PublicRoute path="/login" redirectTo="/contacts" restricted>
+              <LoginView />
+            </PublicRoute>
+            <PrivateRoute path="/contacts" redirectTo="/login">
+              <ContactsView />
+            </PrivateRoute>
+          </Suspense>
         </Switch>
       )}
     </Container>
