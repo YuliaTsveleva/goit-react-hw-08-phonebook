@@ -1,3 +1,5 @@
+import Welcome from '../Components/Welcome';
+
 export default function HomeView() {
-  return <h1>Welcome</h1>;
+  return <Welcome />;
 }

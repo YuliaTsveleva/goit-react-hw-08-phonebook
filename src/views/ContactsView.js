@@ -4,15 +4,11 @@ import ContactList from 'Components/ContactList';
 import Filter from 'Components/Filter';
 import EmptyText from 'Components/EmptyText';
 import { useSelector } from 'react-redux';
-// import { getContacts } from './Redux/phonebook/contacts-selectors';
-// import { getLoadingContactList } from './Redux/phonebook/contacts-selectors';
 import { selectors } from 'Redux/phonebook';
 
 export default function ContactsView() {
   const contactsLength = useSelector(selectors.getContacts).length;
   const loading = useSelector(selectors.getLoading);
-
-  // стили
 
   return (
     <div className="ContactsView" style={{ display: 'flex' }}>
