@@ -1,8 +1,7 @@
-// import { useDispatch, useSelector } from 'react-redux';
-// import { authSelectors } from '../../Redux/auth';
 // import defaultAvatar from './default-avatar.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { authSelectors, authOperations } from 'Redux/auth';
+
 // перенести стили в модуль
 
 const styles = {
@@ -20,8 +19,6 @@ const styles = {
 };
 
 export default function UserMenu() {
-  //   const dispatch = useDispatch();
-  // const name = useSelector(authSelectors.getUserName);
   //   const avatar = defaultAvatar;
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
