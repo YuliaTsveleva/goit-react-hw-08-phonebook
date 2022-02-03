@@ -1,7 +1,7 @@
 // import defaultAvatar from './default-avatar.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { authSelectors, authOperations } from 'Redux/auth';
-
+import LetterAvatar from './Avatar';
 // перенести стили в модуль
 
 const styles = {
@@ -27,6 +27,8 @@ export default function UserMenu() {
   return (
     <div style={styles.container}>
       {/* <img src={avatar} alt="" width="32" style={styles.avatar} /> */}
+      <LetterAvatar name={isFetching ? 'Guest' : name} />
+
       <span style={styles.name}>Hello, {isFetching ? 'Guest' : name}</span>
       <button type="button" onClick={() => dispatch(authOperations.logOut())}>
         Log out
