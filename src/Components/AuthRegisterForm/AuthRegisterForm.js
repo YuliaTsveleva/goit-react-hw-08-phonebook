@@ -15,7 +15,8 @@ const AuthRegisterForm = ({
       <Typography
         variant="h3"
         component="h2"
-        mt={3}
+        mt={4}
+        mb={4}
         sx={{
           color: 'rgb(9, 108, 255)',
         }}
@@ -25,6 +26,7 @@ const AuthRegisterForm = ({
       <div>
         <form onSubmit={handleSubmit} className={s.Form} autoComplete="off">
           <TextField
+            required
             id="outlined-name"
             label="Name"
             type="name"
@@ -47,6 +49,7 @@ const AuthRegisterForm = ({
           />
           <TextField
             id="outlined-password-input"
+            required
             label="Password (at least 7 characters)"
             type="password"
             autoComplete="current-password"
@@ -63,7 +66,7 @@ const AuthRegisterForm = ({
               className={s.Button}
               sx={{
                 backgroundColor: 'rgb(9, 108, 255)',
-                marginTop: 2,
+                marginTop: 6,
               }}
             >
               Register

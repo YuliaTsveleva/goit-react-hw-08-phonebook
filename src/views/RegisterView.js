@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../Redux/auth';
 import AuthRegisterForm from '../Components/AuthRegisterForm';
+import image from '../Images/registration1.png';
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -31,13 +32,26 @@ export default function RegisterView() {
   };
 
   return (
-    <AuthRegisterForm
-      title="Registration"
-      name={name}
-      email={email}
-      handleSubmit={handleSubmit}
-      handleChange={handleChange}
-      password={password}
-    />
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      }}
+    >
+      <AuthRegisterForm
+        title="Registration"
+        name={name}
+        email={email}
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        password={password}
+      />
+      <img
+        src={image}
+        alt="homeImage"
+        style={{ marginTop: '10px', width: '350px' }}
+      />
+    </div>
   );
 }

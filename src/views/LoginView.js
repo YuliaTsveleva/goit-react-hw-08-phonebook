@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../Redux/auth';
 import AuthLogInForm from '../Components/AuthLoginForm';
+import image from '../Images/login2.png';
+import image2 from '../Images/login3.png';
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -27,12 +29,30 @@ export default function LoginView() {
   };
 
   return (
-    <AuthLogInForm
-      title="Log in"
-      email={email}
-      handleSubmit={handleSubmit}
-      handleChange={handleChange}
-      password={password}
-    />
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      }}
+    >
+      <img
+        src={image}
+        alt="loginImage"
+        style={{ marginTop: '10px', width: '350px' }}
+      />
+      <AuthLogInForm
+        title="Log in"
+        email={email}
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        password={password}
+      />
+      <img
+        src={image2}
+        alt="loginImage"
+        style={{ marginTop: '10px', width: '350px' }}
+      />
+    </div>
   );
 }
