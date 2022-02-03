@@ -25,7 +25,6 @@ export default function ContactList() {
               id={contact.id}
               name={contact.name}
               number={contact.number}
-              email={contact.email}
               onClick={() => onDeleteContact(contact.id)}
             />
           ))}

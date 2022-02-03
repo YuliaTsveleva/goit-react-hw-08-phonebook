@@ -29,12 +29,7 @@
   text-decoration: none;
 }
 
-.Email {
-  padding: 10px 0;
-  margin-right: 10px;
-  font-size: 15px;
-  font-style: italic;
-}
+
 
 .TelLink, .MailLink{
   color: inherit

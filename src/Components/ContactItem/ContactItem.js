@@ -5,7 +5,7 @@ import { AiFillDelete } from 'react-icons/ai';
 import { BiLoader } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
 import { selectors } from 'Redux/phonebook';
-function ContactItem({ id, name, number, email, onClick }) {
+function ContactItem({ id, name, number, onClick }) {
   const loading = useSelector(selectors.getLoading);
   return (
     <li className={s.Item}>
@@ -14,11 +14,6 @@ function ContactItem({ id, name, number, email, onClick }) {
         <p className={s.Number}>
           <a className={s.TelLink} href={`tel:${number}`}>
             {number}
-          </a>
-        </p>
-        <p className={s.Email}>
-          <a className={s.MailLink} href={`mailto:${email}`}>
-            {email}
           </a>
         </p>
       </div>
