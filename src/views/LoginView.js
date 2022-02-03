@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../Redux/auth';
-import AuthFormLogIn from '../Components/AuthLoginForm';
+import AuthLogInForm from '../Components/AuthLoginForm';
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ export default function LoginView() {
   };
 
   return (
-    <AuthFormLogIn
+    <AuthLogInForm
       title="Log in"
       email={email}
       handleSubmit={handleSubmit}

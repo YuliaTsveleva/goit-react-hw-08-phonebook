@@ -1,9 +1,8 @@
 import React from 'react';
-import s from './AuthForm.module.css';
-// import Title from '../Title';
+import s from './AuthLoginForm.module.css';
 import { TextField, Typography, Button } from '@mui/material';
 
-const AuthFormLogIn = ({
+const AuthLogInForm = ({
   title,
   email,
   handleSubmit,
@@ -22,7 +21,6 @@ const AuthFormLogIn = ({
       >
         {title}
       </Typography>
-      {/* <Title text={title} /> */}
       <div>
         <form onSubmit={handleSubmit} className={s.Form} autoComplete="off">
           <TextField
@@ -34,10 +32,6 @@ const AuthFormLogIn = ({
             value={email}
             onChange={handleChange}
             margin="normal"
-            // sx={{
-            //   width: 320,
-            //   backgroundColor: 'rgb(243, 245, 247)',
-            // }}
             className={s.Input}
           />
           <TextField
@@ -49,23 +43,9 @@ const AuthFormLogIn = ({
             value={password}
             onChange={handleChange}
             margin="normal"
-            // sx={{
-            //   width: 320,
-            //   backgroundColor: 'rgb(243, 245, 247)',
-            // }}
             className={s.Input}
           />
 
-          {/* <label className={s.Label}>
-            Password * <span className={s.Note}>(at least 7 characters)</span>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={handleChange}
-              className={s.Input}
-            />
-          </label> */}
           <div className={s.ButtonWrapper}>
             <Button
               variant="contained"
@@ -78,10 +58,6 @@ const AuthFormLogIn = ({
             >
               Log in
             </Button>
-            {/* <button type="submit" className={s.Button}>
-              Log in
-            </button> */}
-            {/* background-color: rgb(9, 108, 255); */}
           </div>
         </form>
       </div>
@@ -89,4 +65,4 @@ const AuthFormLogIn = ({
   );
 };
 
-export default AuthFormLogIn;
+export default AuthLogInForm;
