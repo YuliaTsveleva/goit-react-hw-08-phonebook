@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../Redux/auth';
-import AuthFormLogIn from '../Components/AuthForm';
+import AuthFormLogIn from '../Components/AuthLoginForm';
 
 export default function LoginView() {
   const dispatch = useDispatch();
