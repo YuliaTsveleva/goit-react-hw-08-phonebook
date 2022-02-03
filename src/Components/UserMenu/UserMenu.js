@@ -12,7 +12,11 @@ export default function UserMenu() {
     <div className={s.container}>
       <LetterAvatar name={isFetching ? 'Guest' : name} />
       <span className={s.name}>Hello, {isFetching ? 'Guest' : name}</span>
-      <button type="button" onClick={() => dispatch(authOperations.logOut())}>
+      <button
+        className={s.Button}
+        type="button"
+        onClick={() => dispatch(authOperations.logOut())}
+      >
         Log out
       </button>
     </div>
