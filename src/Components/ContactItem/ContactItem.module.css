@@ -9,9 +9,11 @@
 }
 
 .Wrapper {
-  display: flex;
+  /* display: flex; */
   /* flex-direction: column; */
-  align-items: center;
+  /* align-items: center; */
+display: grid;
+grid-template-columns: 300px 200px;
 }
 
 .Name {
@@ -28,8 +30,6 @@
   font-size: 15px;
   text-decoration: none;
 }
-
-
 
 .TelLink, .MailLink{
   color: inherit
