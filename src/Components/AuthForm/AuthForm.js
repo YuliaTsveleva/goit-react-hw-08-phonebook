@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './AuthForm.module.css';
-import Title from '../Title';
+// import Title from '../Title';
+import { TextField, Typography, Button } from '@mui/material';
 
 const AuthFormLogIn = ({
   title,
@@ -11,21 +12,51 @@ const AuthFormLogIn = ({
 }) => {
   return (
     <div className={s.Wrapper}>
-      <Title text={title} />
+      <Typography
+        variant="h3"
+        component="h2"
+        mt={3}
+        sx={{
+          color: 'rgb(9, 108, 255)',
+        }}
+      >
+        {title}
+      </Typography>
+      {/* <Title text={title} /> */}
       <div>
         <form onSubmit={handleSubmit} className={s.Form} autoComplete="off">
-          <label className={s.Label}>
-            Email
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-              className={s.Input}
-            />
-          </label>
+          <TextField
+            required
+            id="outlined-email"
+            label="Email"
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+            margin="normal"
+            // sx={{
+            //   width: 320,
+            //   backgroundColor: 'rgb(243, 245, 247)',
+            // }}
+            className={s.Input}
+          />
+          <TextField
+            id="outlined-password-input"
+            label="Password (at least 7 characters)"
+            type="password"
+            autoComplete="current-password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+            margin="normal"
+            // sx={{
+            //   width: 320,
+            //   backgroundColor: 'rgb(243, 245, 247)',
+            // }}
+            className={s.Input}
+          />
 
-          <label className={s.Label}>
+          {/* <label className={s.Label}>
             Password * <span className={s.Note}>(at least 7 characters)</span>
             <input
               type="password"
@@ -34,11 +65,23 @@ const AuthFormLogIn = ({
               onChange={handleChange}
               className={s.Input}
             />
-          </label>
+          </label> */}
           <div className={s.ButtonWrapper}>
-            <button type="submit" className={s.Button}>
+            <Button
+              variant="contained"
+              type="submit"
+              className={s.Button}
+              sx={{
+                backgroundColor: 'rgb(9, 108, 255)',
+                marginTop: 2,
+              }}
+            >
               Log in
-            </button>
+            </Button>
+            {/* <button type="submit" className={s.Button}>
+              Log in
+            </button> */}
+            {/* background-color: rgb(9, 108, 255); */}
           </div>
         </form>
       </div>
