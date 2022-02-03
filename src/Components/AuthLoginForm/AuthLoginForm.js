@@ -16,7 +16,7 @@ const AuthLogInForm = ({
         component="h2"
         mt={3}
         sx={{
-          color: 'rgb(9, 108, 255)',
+          color: 'primary.main',
         }}
       >
         {title}
@@ -52,7 +52,7 @@ const AuthLogInForm = ({
               type="submit"
               className={s.Button}
               sx={{
-                backgroundColor: 'rgb(9, 108, 255)',
+                backgroundColor: 'primary.main',
                 marginTop: 2,
               }}
             >

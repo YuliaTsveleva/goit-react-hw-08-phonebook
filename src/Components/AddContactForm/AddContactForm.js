@@ -79,7 +79,6 @@ export default function AddContactForm() {
           </div>
         );
       })}
-      <p className={s.Reminder}>Fields marked with * are required</p>
       <button
         className={s.Button}
         type="submit"

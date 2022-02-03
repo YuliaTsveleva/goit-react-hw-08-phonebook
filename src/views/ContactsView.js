@@ -5,21 +5,28 @@ import Filter from 'Components/Filter';
 import EmptyText from 'Components/EmptyText';
 import { useSelector } from 'react-redux';
 import { selectors } from 'Redux/phonebook';
+import image1 from '../Images/contacts1.png';
+import image2 from '../Images/contacts2.png';
 
 export default function ContactsView() {
   const contactsLength = useSelector(selectors.getContacts).length;
   const loading = useSelector(selectors.getLoading);
 
   return (
-    <div className="ContactsView" style={{ display: 'flex' }}>
+    <div
+      className="ContactsView"
+      style={{ display: 'flex', justifyContent: 'space-around' }}
+    >
       <Section title="Phonebook">
         <AddContactForm />
-      </Section>
+      </Section>{' '}
+      <img src={image1} alt="homeImage" style={{ width: '250px' }} />
       <Section title="Contacts">
         {contactsLength > 1 && <Filter />}
         <ContactList />
         {contactsLength === 0 && loading === 'notLoading' && <EmptyText />}
       </Section>
+      <img src={image2} alt="homeImage" style={{ width: '50px' }} />
     </div>
   );
 }

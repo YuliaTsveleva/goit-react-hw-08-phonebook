@@ -18,7 +18,7 @@ const AuthRegisterForm = ({
         mt={4}
         mb={4}
         sx={{
-          color: 'rgb(9, 108, 255)',
+          color: 'primary.main',
         }}
       >
         {title}
@@ -65,7 +65,7 @@ const AuthRegisterForm = ({
               type="submit"
               className={s.Button}
               sx={{
-                backgroundColor: 'rgb(9, 108, 255)',
+                backgroundColor: 'primary.main',
                 marginTop: 6,
               }}
             >

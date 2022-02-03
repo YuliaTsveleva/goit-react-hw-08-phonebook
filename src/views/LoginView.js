@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../Redux/auth';
 import AuthLogInForm from '../Components/AuthLoginForm';
-import image from '../Images/login2.png';
-import image2 from '../Images/login3.png';
+import image1 from '../Images/login1.png';
+import image2 from '../Images/login2.png';
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ export default function LoginView() {
       }}
     >
       <img
-        src={image}
+        src={image1}
         alt="loginImage"
         style={{ marginTop: '10px', width: '350px' }}
       />

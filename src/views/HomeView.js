@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import image from '../Images/home2.png';
+import image from '../Images/home.png';
 
 export default function HomeView() {
   return (
@@ -10,7 +10,7 @@ export default function HomeView() {
         mt={3}
         textAlign="center"
         sx={{
-          color: 'rgb(9, 108, 255)',
+          color: 'primary.main',
         }}
       >
         Welcome to your private phonebook!

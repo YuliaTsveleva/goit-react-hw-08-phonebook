@@ -2,11 +2,12 @@
   padding: 20px 30px;
 }
 
-.Section:first-child {
+/* .Section:first-child {
   margin-right: 50px;
-}
+} */
 
 .Title {
-  color: rgb(9, 108, 255);
+  color: #1976d2;
   padding: 10px;
+  text-align: center;
 }
