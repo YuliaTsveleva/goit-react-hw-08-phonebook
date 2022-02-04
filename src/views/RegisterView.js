@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authOperations } from '../Redux/auth';
-import AuthRegisterForm from '../Components/AuthRegisterForm';
-import image from '../Images/register.jpg';
+import { authOperations } from 'Redux/auth';
+import AuthRegisterForm from 'Components/AuthRegisterForm';
+import image from 'Images/register.jpg';
 
 export default function RegisterView() {
   const dispatch = useDispatch();

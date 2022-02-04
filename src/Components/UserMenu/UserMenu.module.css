@@ -1,12 +1,12 @@
-  .container {
-    display: flex;
-    align-items: center;
-  }
- 
-  .name {
-    font-weight: 700;
-    margin-right: 12px;
-  }
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-weight: 700;
+  margin-right: 12px;
+}
 
 .Button {
   display: flex;
