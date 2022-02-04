@@ -25,13 +25,19 @@ export default function ContactList() {
   return (
     <>
       {loading === 'loadingContacts' && <p>Loading...</p>}
-      <input
-        type="checkbox"
-        checked={sorted}
-        onChange={ToggleSort}
-        value="sort"
-      />
-      <label for="sort">Sort by name</label>
+
+      {contacts && contacts.length > 1 && (
+        <>
+          <input
+            type="checkbox"
+            checked={sorted}
+            onChange={ToggleSort}
+            value="sort"
+          />
+          <label for="sort">Sort by name</label>
+        </>
+      )}
+
       <ul className={s.contactsList}>
         {contacts &&
           contactsToShow.map(contact => (
