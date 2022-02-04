@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import image from '../Images/home.png';
+import image from '../Images/home.jpg';
 
 export default function HomeView() {
   return (

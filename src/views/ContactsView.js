@@ -4,8 +4,8 @@ import ContactList from 'Components/ContactList';
 import EmptyText from 'Components/EmptyText';
 import { useSelector } from 'react-redux';
 import { selectors } from 'Redux/phonebook';
-import image1 from '../Images/contacts1.png';
-import image2 from '../Images/contacts2.png';
+import image1 from '../Images/contacts1.jpg';
+import image2 from '../Images/contacts2.jpg';
 
 export default function ContactsView() {
   const contactsLength = useSelector(selectors.getContacts).length;
