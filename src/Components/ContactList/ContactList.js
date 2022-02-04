@@ -21,6 +21,8 @@ export default function ContactList() {
   const [sorted, setSorted] = useState(false);
   const contactsLength = useSelector(selectors.getContacts).length;
 
+  console.log('contactsLength', contactsLength);
+
   useEffect(() => {
     dispatch(operations.fetchContacts());
   }, [dispatch]);
@@ -34,28 +36,26 @@ export default function ContactList() {
   return (
     <>
       {loading === 'loadingContacts' && <p>Loading...</p>}
-      {contacts && contacts.length > 1 && (
+      {contacts && contactsLength > 1 && (
         <div className={s.FeaturesWrapper}>
-          {contactsLength > 1 && <Filter />}
-          {contactsLength > 1 && (
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={sorted}
-                  onChange={ToggleSort}
-                  value="sort"
-                  sx={{
-                    '& .MuiSvgIcon-root': { fontSize: 20 },
-                  }}
-                />
-              }
-              label="Sort by name"
-              labelPlacement="start"
-              sx={{
-                color: 'rgba(86, 97, 121, 0.904)',
-              }}
-            ></FormControlLabel>
-          )}
+          <Filter />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={sorted}
+                onChange={ToggleSort}
+                value="sort"
+                sx={{
+                  '& .MuiSvgIcon-root': { fontSize: 20 },
+                }}
+              />
+            }
+            label="Sort by name"
+            labelPlacement="start"
+            sx={{
+              color: 'rgba(86, 97, 121, 0.904)',
+            }}
+          ></FormControlLabel>
         </div>
       )}
       <ul className={s.contactsList}>

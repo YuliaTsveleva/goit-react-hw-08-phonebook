@@ -3,20 +3,6 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { authSelectors } from 'Redux/auth';
 import s from './MainNav.module.css';
-// перенести стили в модуль.css
-
-// const styles = {
-//   link: {
-//     display: 'inline-block',
-//     textDecoration: 'none',
-//     padding: 12,
-//     fontWeight: 700,
-//     color: '#2A363B',
-//   },
-//   activeLink: {
-//     color: '#E84A5F',
-//   },
-// };
 
 const MainNav = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
