@@ -6,7 +6,6 @@ import { BiLoader } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
 import { selectors } from 'Redux/phonebook';
 import LetterAvatar from '../Avatar/Avatar';
-
 function ContactItem({ id, name, number, onClick }) {
   const loading = useSelector(selectors.getLoading);
   return (
@@ -29,7 +28,6 @@ function ContactItem({ id, name, number, onClick }) {
 }
 
 export default ContactItem;
-
 ContactItem.propTypes = {
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,

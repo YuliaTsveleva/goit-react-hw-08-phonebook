@@ -4,12 +4,6 @@ import ContactItem from '../ContactItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { operations, selectors } from 'Redux/phonebook';
 import { Checkbox, FormControlLabel } from '@mui/material';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import {
-//   CheckBoxOutlineBlankIcon,
-//   CheckBoxIcon,
-// } from '@mui/icons-material';
-// import CheckBoxIcon from '@mui/icons-material/Bookmark';z
 import Filter from '../Filter';
 
 export default function ContactList() {
@@ -56,7 +50,7 @@ export default function ContactList() {
           ></FormControlLabel>
         </div>
       )}
-      <ul className={s.contactsList}>
+      <ul className={s.ContactsList}>
         {contacts &&
           contactsToShow.map(contact => (
             <ContactItem

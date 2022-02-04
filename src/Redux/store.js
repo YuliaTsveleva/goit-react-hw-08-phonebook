@@ -14,12 +14,6 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-// const contactsPersistConfig = {
-//   key: 'contacts',
-//   storage,
-//   blacklist: ['filter'],
-// };
-
 const authPersistConfig = {
   key: 'auth',
   storage,
