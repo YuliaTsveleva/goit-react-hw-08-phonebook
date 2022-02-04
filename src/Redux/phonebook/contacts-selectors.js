@@ -13,3 +13,16 @@ export const getFilteredContacts = createSelector(
     );
   },
 );
+
+export const getSortedContacts = createSelector(
+  [getContacts, getFilter],
+  (contacts, filter) => {
+    const normFilter = filter.toLowerCase();
+    function SortArray(x, y) {
+      return x.name.localeCompare(y.name);
+    }
+    return contacts
+      .filter(contact => contact.name.toLowerCase().includes(normFilter))
+      .sort(SortArray);
+  },
+);

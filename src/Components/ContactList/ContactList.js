@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import s from './ContactList.module.css';
 import ContactItem from '../ContactItem';
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,17 +9,32 @@ export default function ContactList() {
   const dispatch = useDispatch();
   const onDeleteContact = id => dispatch(operations.deleteContact(id));
   const loading = useSelector(selectors.getLoading);
+  const sortedContacts = useSelector(selectors.getSortedContacts);
+  const [sorted, setSorted] = useState(false);
 
   useEffect(() => {
     dispatch(operations.fetchContacts());
   }, [dispatch]);
 
+  const ToggleSort = () => {
+    setSorted(!sorted);
+  };
+
+  let contactsToShow = sorted ? sortedContacts : contacts;
+
   return (
     <>
       {loading === 'loadingContacts' && <p>Loading...</p>}
+      <input
+        type="checkbox"
+        checked={sorted}
+        onChange={ToggleSort}
+        value="sort"
+      />
+      <label for="sort">Sort by name</label>
       <ul className={s.contactsList}>
         {contacts &&
-          contacts.map(contact => (
+          contactsToShow.map(contact => (
             <ContactItem
               key={contact.id}
               id={contact.id}
