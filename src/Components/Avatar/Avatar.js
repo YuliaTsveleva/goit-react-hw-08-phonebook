@@ -1,6 +1,6 @@
 import { Avatar } from '@mui/material';
 
-export default function LetterAvatar({ name }) {
+export default function LetterAvatar({ name, width, height }) {
   function stringToColor(string) {
     let hash = 0;
     let i;
@@ -24,7 +24,12 @@ export default function LetterAvatar({ name }) {
   return (
     <Avatar
       {...stringAvatar(name)}
-      sx={{ marginRight: 1, bgcolor: stringToColor(name) }}
+      sx={{
+        marginRight: 1,
+        bgcolor: stringToColor(name),
+        width: { width },
+        height: { height },
+      }}
     />
   );
 }
