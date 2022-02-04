@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import s from './AddContactForm.module.css';
-import CONFIG from '../../Data/inputConfig.json';
+import CONFIG from 'Data/inputConfig.json';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import { BiLoader } from 'react-icons/bi';
 import { useSelector, useDispatch } from 'react-redux';
 import { operations, actions, selectors } from 'Redux/phonebook';
-import { nanoid } from 'nanoid';
 
 export default function AddContactForm() {
   const [name, setName] = useState('');
@@ -41,7 +40,7 @@ export default function AddContactForm() {
     if (alreadyExist) {
       alert(`${name} is already exists in contacts`);
     } else {
-      const contact = { id: nanoid(), name, number, email };
+      const contact = { name, number, email };
       dispatch(operations.addContact(contact));
     }
     dispatch(actions.changeFilter(''));

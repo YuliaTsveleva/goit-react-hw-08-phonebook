@@ -5,7 +5,7 @@ import { AiFillDelete } from 'react-icons/ai';
 import { BiLoader } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
 import { selectors } from 'Redux/phonebook';
-import LetterAvatar from '../Avatar/Avatar';
+import LetterAvatar from '../Avatar';
 function ContactItem({ id, name, number, onClick }) {
   const loading = useSelector(selectors.getLoading);
   return (

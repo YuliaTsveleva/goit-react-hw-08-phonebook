@@ -1,26 +1,24 @@
-.Wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Form {
   width: 420px;
-  
 }
 
 .Input {
   font-size: 16px;
   display: block;
   width: 420px;
-  /* margin: 0 auto 10px; */
   border: 1px solid rgb(28, 28, 128);
   border-radius: 4px;
   background-color: rgb(243, 245, 247);
   color: rgba(70, 79, 99, 0.904);
 }
 
-.ButtonWrapper{
-   display: flex;
-   justify-content: center;
+.ButtonWrapper {
+  display: flex;
+  justify-content: center;
 }
