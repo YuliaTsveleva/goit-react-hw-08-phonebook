@@ -21,8 +21,6 @@ export default function ContactList() {
   const [sorted, setSorted] = useState(false);
   const contactsLength = useSelector(selectors.getContacts).length;
 
-  console.log('contactsLength', contactsLength);
-
   useEffect(() => {
     dispatch(operations.fetchContacts());
   }, [dispatch]);
