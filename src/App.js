@@ -10,6 +10,7 @@ import Container from './Components/Container/Container';
 import { authOperations, authSelectors } from './Redux/auth';
 import PrivateRoute from './Components/PrivateRoute';
 import PublicRoute from './Components/PublicRoute';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 
 export default function App() {
@@ -43,6 +44,7 @@ export default function App() {
           </Suspense>
         </Switch>
       )}
+      <ToastContainer autoClose="1500" position="top-center" theme="light" />
     </Container>
   );
 }
