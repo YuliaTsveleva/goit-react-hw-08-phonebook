@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './AuthRegisterForm.module.css';
+import PropTypes from 'prop-types';
 import { TextField, Typography, Button } from '@mui/material';
 
 const AuthRegisterForm = ({
@@ -79,3 +80,12 @@ const AuthRegisterForm = ({
 };
 
 export default AuthRegisterForm;
+
+AuthRegisterForm.propTypes = {
+  title: PropTypes.string,
+  name: PropTypes.string,
+  email: PropTypes.string,
+  handleSubmit: PropTypes.func,
+  handleChange: PropTypes.func,
+  password: PropTypes.string,
+};

@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import { authSelectors } from 'Redux/auth';
+import PropTypes from 'prop-types';
 
 export default function PrivateRoute({
   children,
@@ -14,3 +15,8 @@ export default function PrivateRoute({
     </Route>
   );
 }
+
+PrivateRoute.propTypes = {
+  children: PropTypes.node,
+  redirectTo: PropTypes.string,
+};

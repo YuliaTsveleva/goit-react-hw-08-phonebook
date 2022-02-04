@@ -1,4 +1,5 @@
 import { Avatar } from '@mui/material';
+import PropTypes from 'prop-types';
 
 export default function LetterAvatar({ name, width, height }) {
   function stringToColor(string) {
@@ -33,3 +34,9 @@ export default function LetterAvatar({ name, width, height }) {
     />
   );
 }
+
+Avatar.propTypes = {
+  name: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+};

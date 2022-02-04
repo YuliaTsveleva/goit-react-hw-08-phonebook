@@ -31,6 +31,6 @@ export default ContactItem;
 ContactItem.propTypes = {
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
-  email: PropTypes.string,
+  id: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };

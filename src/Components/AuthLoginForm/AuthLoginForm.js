@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './AuthLoginForm.module.css';
+import PropTypes from 'prop-types';
 import { TextField, Typography, Button } from '@mui/material';
 
 const AuthLogInForm = ({
@@ -66,3 +67,11 @@ const AuthLogInForm = ({
 };
 
 export default AuthLogInForm;
+
+AuthLogInForm.propTypes = {
+  title: PropTypes.string,
+  email: PropTypes.string,
+  handleSubmit: PropTypes.func,
+  handleChange: PropTypes.func,
+  password: PropTypes.string,
+};

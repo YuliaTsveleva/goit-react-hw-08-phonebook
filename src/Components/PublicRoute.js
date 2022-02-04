@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import { authSelectors } from 'Redux/auth';
+import PropTypes from 'prop-types';
 
 export default function PublicRoute({
   children,
@@ -17,3 +18,9 @@ export default function PublicRoute({
     </Route>
   );
 }
+
+PublicRoute.propTypes = {
+  children: PropTypes.node,
+  redirectTo: PropTypes.string,
+  restricted: PropTypes.bool,
+};
