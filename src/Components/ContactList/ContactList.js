@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import s from './ContactList.module.css';
 import ContactItem from '../ContactItem';
 import { useSelector, useDispatch } from 'react-redux';
-import { operations, selectors } from 'Redux/phonebook';
+import { operations, selectors, actions } from 'Redux/phonebook';
 import { Checkbox, FormControlLabel } from '@mui/material';
 import Filter from '../Filter';
 
@@ -18,6 +18,12 @@ export default function ContactList() {
   useEffect(() => {
     dispatch(operations.fetchContacts());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (contacts.length === 0) {
+      dispatch(actions.changeFilter(''));
+    }
+  }, [dispatch, contacts.length]);
 
   const ToggleSort = () => {
     setSorted(!sorted);
