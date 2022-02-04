@@ -5,3 +5,8 @@
   align-items: stretch;
   padding: 0;
 }
+
+.FeaturesWrapper{
+  display: flex;
+  justify-content: space-between;
+}

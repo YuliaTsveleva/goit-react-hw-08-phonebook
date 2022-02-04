@@ -3,6 +3,14 @@ import s from './ContactList.module.css';
 import ContactItem from '../ContactItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { operations, selectors } from 'Redux/phonebook';
+import { Checkbox, FormControlLabel } from '@mui/material';
+// import FormControlLabel from '@mui/material/FormControlLabel';
+// import {
+//   CheckBoxOutlineBlankIcon,
+//   CheckBoxIcon,
+// } from '@mui/icons-material';
+// import CheckBoxIcon from '@mui/icons-material/Bookmark';
+import Filter from '../Filter';
 
 export default function ContactList() {
   const contacts = useSelector(selectors.getFilteredContacts);
@@ -11,6 +19,7 @@ export default function ContactList() {
   const loading = useSelector(selectors.getLoading);
   const sortedContacts = useSelector(selectors.getSortedContacts);
   const [sorted, setSorted] = useState(false);
+  const contactsLength = useSelector(selectors.getContacts).length;
 
   useEffect(() => {
     dispatch(operations.fetchContacts());
@@ -25,19 +34,30 @@ export default function ContactList() {
   return (
     <>
       {loading === 'loadingContacts' && <p>Loading...</p>}
-
       {contacts && contacts.length > 1 && (
-        <>
-          <input
-            type="checkbox"
-            checked={sorted}
-            onChange={ToggleSort}
-            value="sort"
-          />
-          <label for="sort">Sort by name</label>
-        </>
+        <div className={s.FeaturesWrapper}>
+          {contactsLength > 1 && <Filter />}
+          {contactsLength > 1 && (
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={sorted}
+                  onChange={ToggleSort}
+                  value="sort"
+                  sx={{
+                    '& .MuiSvgIcon-root': { fontSize: 20 },
+                  }}
+                />
+              }
+              label="Sort by name"
+              labelPlacement="start"
+              sx={{
+                color: 'rgba(86, 97, 121, 0.904)',
+              }}
+            ></FormControlLabel>
+          )}
+        </div>
       )}
-
       <ul className={s.contactsList}>
         {contacts &&
           contactsToShow.map(contact => (
